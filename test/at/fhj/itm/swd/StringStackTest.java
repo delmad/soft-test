@@ -93,9 +93,17 @@ public class StringStackTest {
 	@Test(expected = AssertionError.class)
 	public void testPushPop() {
 		fail("not implemented yet!");
-		// TODO: add implementation for this test according to the Javadoc-comment
-		
 		assertTrue(s.isEmpty());
+
+		s.push("aaa");
+
+		assertFalse(s.isEmpty());
+
+		s.pop();
+
+
+		assertTrue(s.isEmpty());
+
 	}
 
 	/**
@@ -103,7 +111,7 @@ public class StringStackTest {
 	 * to use an if else case (!)
 	 */
 	
-	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	@Test(expected = IllegalStateException.class)
 	public void testPopEmptyStack() {
 		s.pop(); // !!!
 	}
@@ -115,8 +123,9 @@ public class StringStackTest {
 	 */
 	@Test(expected = AssertionError.class)
 	public void testPushFullStack() {
-		fail("not implemented yet!");
-		// TODO: add implementation for this test according to the Javadoc-comment
-		
+		for(int x = 0; x <= s.getElementData().length; x++)
+		{
+			s.push("aaa");
+		}
 	}
 }
